@@ -82,6 +82,8 @@ void push_head(Linkqueue* q,Datatype x)
 		Node *node = (Node*)malloc(sizeof(Node));
 		if(empty(q))
 		{
+			node->data = x;
+			node->next = NULL;
 			q->head->next = node;
 			q->tail = node;
 		}
