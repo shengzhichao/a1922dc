@@ -1,28 +1,32 @@
-#ifndef _LINK_H_
-#define _LINK_H_
+#ifndef QUEUE_H
+#define QUEUE_H
 
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 typedef int Datatype;
-
-typedef struct node_{
+typedef struct node_
+{
 	Datatype data;
-	struct node_*next;
+	struct node_ *next;
 }Node;
 
+typedef struct list_
+{
+	Node *head;
+	Node *tail;
+}Linkstack;
 
-typedef struct list_{
-	Node*head;
-	Node*tail;
-	Node*current;
-}stack;
 
-void Initlist(stack*);
-int Isempty(stack*);
-Node* Gettop(stack*,int);
-void Push(stack*,Datatype);
-void Pop(stack*,Datatype);
-Datatype Delete(stack*,int);
-void Display(stack*);
-	
+void initlinkstack(Linkstack*);
+
+int empty(Linkstack*);
+
+void Pop(Linkstack*);
+
+int Size(Linkstack*);
+
+void Push(Linkstack*,Datatype);
+
+void display(Linkstack *);
+
 #endif
